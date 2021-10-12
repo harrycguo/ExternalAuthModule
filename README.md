@@ -4,8 +4,8 @@ This is an example of an External Auth module to be plugged into a Shibboleth Id
 
 It is a simple External Auth that does 2 things:
 
-1) Redirect the User to a custom JSP webpage with a form for a username
-2) Takes the username from the form and creates a Java Subject from it. Setting the username as the
+1) `GET`: Redirect the User to a custom JSP webpage with a form for a username
+2) `POST`: Takes the username from the form and creates a Java Subject, setting the username as the
 Username Principal.
    
 NOTE: Your custom webpage will need to match the file name that is in the `GET` method. Your form will also need
@@ -54,5 +54,7 @@ In `web.xml`, add the following servlet:
     <url-pattern>/Authn/External/*</url-pattern>
 </servlet-mapping>
 ```
+
+Route some auth flows through the External Module
 
 
